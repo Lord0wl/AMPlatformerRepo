@@ -25,7 +25,7 @@ public class PlatformerMovement : MonoBehaviour
         velocity.x = moveX * moveSpeed;
         rb.velocity = velocity;
         //if you press space AND you're on the ground, jump the character
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && grounded)
         {
             rb.AddForce(new Vector2(0, 100 * jumpSpeed));
         }
